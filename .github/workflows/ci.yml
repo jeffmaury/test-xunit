@@ -18,4 +18,10 @@ jobs:
         with:
           java-version: 11
       - name: Build
-        run: ./mvnw verify -B
+        run: ./mvnw verify -ntp
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: test-reports
+          path: |
+            target/surefire-reports/
