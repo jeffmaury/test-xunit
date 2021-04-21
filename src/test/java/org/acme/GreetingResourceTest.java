@@ -26,4 +26,10 @@ public class GreetingResourceTest {
              .statusCode(200)
              .body(is("Hello"));
     }
+    
+    @Test
+    public void testErroredTest() throws Exception {
+        throw new NullPointerException();
+    }
+
 }
